@@ -1,4 +1,7 @@
 module.exports = {
+  head: [
+    ['link', { rel: 'shortcut icon', type: "image/png", href: `./logo.png` }]
+  ],
   title: '子非鱼',
   description: '欢迎来到我的个人博客网站！',
   themeConfig: {
@@ -21,5 +24,10 @@ module.exports = {
     // 默认为 "Edit this page"
     editLinkText: '帮助我修改错误！',
     lastUpdated: '最后更新时间', // string | boolean
+    sidebar: 'auto',
+    // 显示侧边栏标题深度
+    sidebarDepth: 2,
+    // 显示所有标题
+    displayAllHeaders: true
   }
 }
