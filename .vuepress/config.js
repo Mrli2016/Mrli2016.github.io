@@ -1,6 +1,6 @@
 module.exports = {
   head: [
-    ['link', { rel: 'shortcut icon', type: "image/png", href: `/assets/img/logo.png` }]
+    ['link', { rel: 'shortcut icon', type: "image/png", href: `./logo.png` }]
   ],
   title: '子非鱼',
   description: '欢迎来到我的个人博客网站！',
