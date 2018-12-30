@@ -2,3 +2,4 @@
 Dockerfile
 .vuepress/html
 dist
+node_modules
