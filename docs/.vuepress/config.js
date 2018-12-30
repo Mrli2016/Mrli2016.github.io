@@ -24,7 +24,7 @@ module.exports = {
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
-    editLinkText: '帮助我修改错误！',
+    editLinkText: '指出错误',
     lastUpdated: '最后更新时间', // string | boolean
     sidebar: 'auto',
     // 显示侧边栏标题深度
