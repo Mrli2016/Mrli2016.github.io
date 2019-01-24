@@ -4,7 +4,7 @@ tags:
 - docker
 ---
 # 被忽略的后端开发神器--docker
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eab8b7f0ae001?w=1200&h=500&f=jpeg&s=57612)
+![](./images/docker/docker.jpg)
 
 刚接触Docker的时候，以为只是用来做运维。后来真正用的时候才发觉，这个Docker简直是个神器。不管什么开发场景都能轻松应付。想要什么环境都能随意生成，而且灵活性更高，更轻量，完美实现`微服务`的概念。
 ## 什么是`Docker`
@@ -29,7 +29,7 @@ tags:
 docker search flask
 ```
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eab9279114da5?w=1023&h=460&f=jpeg&s=177372)
+![](./images/docker/search_flask.jpg)
 在这里，我是通过Docker hub官网挑选出了python3.7 + alpine3.8组合的运行环境，`alpine`是精简版的linux，体积更小、运行的资源消耗更少。
 ```bash
 # 拉取镜像
@@ -73,16 +73,16 @@ docker run -it --name test -p 8080:80 -v /docker/flask/app:/app -w /app tiangolo
 `python main.py` 通过python来运行工作区的main.py文件。
 运行结果：
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabad3f943de8?w=972&h=167&f=jpeg&s=45306)
+![](./images/docker/run_flask.png)
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabb03172152a?w=333&h=92&f=jpeg&s=10574)
+![](./images/docker/run_flask_result.png)
 现在主机跟容器的链接已经建立起来了，主机通过8080端口就能访问到容器的网站。
 
 
 ## 自定义镜像
 在使用别人定制的镜像时总是不能尽善尽美的，如果在自己项目里面，不能每次都是拉取下来重新配置一下。像上面的镜像，我可不喜欢这么长的名字，想想每次要敲这么长的名字都头疼(tiangolo/uwsgi-nginx-flask:python3.7-alpine3.8)。
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabb6964d392a?w=50&h=52&f=jpeg&s=9224)
+![](./images/docker/头疼.jpg)
 ### 编写Dockerfile文件
 打开我们刚才的/docker/flask路径，在根目录下创建Dockerfile文件，内容如下。
 ```docker
@@ -133,7 +133,7 @@ Successfully tagged myflask:latest
 编译完后就通过`docker images`查看一下，就能看到myflask镜像了，里面能直接运行`python main.py`来启动flask，并且内置了vim和redis包。
 
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabd93166c9d3?w=53&h=50&f=jpeg&s=3028)
+![](./images/docker/开心.jpg)
 ## `Docker Compose`让多容器成为一个整体
 我们的每个容器都负责一个服务，这样容器多的时候一个个手动启动的话是不现实的。在这种情况我们可以通过`Docker Compose`来关联每个容器，组成一个完整的项目。
 >`Compose`项目由`Python`编写，实现上调用了 `Docker`服务提供的 API 来对容器进行管理。
@@ -197,7 +197,7 @@ docker-compose up
 ```
 就辣么简单!现在我们在浏览器上访问`http://localhost:8080/`就能看到结果了，并且每访问一次这页面都会自动增加访问次数.
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabc9175e1155?w=636&h=134&f=jpeg&s=15789)
+![](./images/docker/眨眼.gif)
 在这里，我们也能通过`docker ps`命令查看运行中的容器：
 ```bash
 docker ps

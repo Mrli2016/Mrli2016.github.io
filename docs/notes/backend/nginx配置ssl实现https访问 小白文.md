@@ -6,14 +6,14 @@ tags:
 # nginx配置ssl实现https访问 小白文
 
 刚刚部署完服务器后的我满怀欣喜地访问自己的网站，看哪都哪满意。但是兴奋感一过发现，诶，为什么浏览器左上角会提示不安全？想了想，不行，我也要搞个https来，我也要上锁！
-![](https://user-gold-cdn.xitu.io/2018/11/30/16764f298df453ff?w=61&h=57&f=jpeg&s=9677)
+![](./images/nginx/思考.jpg)
 > HTTP协议以明文方式发送内容，不提供任何方式的数据加密。为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。
 
 ## 申请证书
 在这里，我直接申请腾讯云的免费证书。这里需要注意下，这亚洲诚信机构颁发的免费证书只能一个域名使用，子域名那些需要另外申请。别说，这腾讯里面申请还挺快的，十多分钟就通过了。下载的是一个zip文件，解压后打开里面的Nginx文件夹，把1_XXX.com_bundle.crt跟2_XXX.com.key文件复制下来。
 ## 打开nginx配置文件
 不知道nginx文件位置的话可以通过whereis nginx命令来查找。
-![](https://user-gold-cdn.xitu.io/2018/11/30/16764f32efbf16f2?w=698&h=38&f=jpeg&s=18400)
+![](./images/nginx/where_nginx.jpg)
 我的配置文件在/ect/nginx，现在把刚才的两个证书文件复制过来，待会直接配置使用就行了。nginx的配置文件是nginx.conf，里面的配置内容有以下，为了容易明白，我都加上了注释。
 ```
 # 运行用户，默认即是nginx，可以不进行设置
@@ -104,12 +104,12 @@ server
 }
 ```
 唔，配置基本就这些，挺简单的吧。小白福利。
-![](https://user-gold-cdn.xitu.io/2018/11/30/16764f3d81b52300?w=53&h=53&f=jpeg&s=2009)
+![](./images/nginx/斜眼笑.jpg)
 然后我们配置文件写好后用nginx测试一下
 ```
 nginx -t
 ```
-![](https://user-gold-cdn.xitu.io/2018/11/30/16764f455aca8a72?w=483&h=53&f=jpeg&s=18374)
+![](./images/nginx/nginx_test.jpg)
 妥妥的，这个过了后就能重启nginx生效了。
 > 这里需要注意下，导入新的证书后需要重启而不是重载，nginx -s reload是普通修改配置重载。
 
