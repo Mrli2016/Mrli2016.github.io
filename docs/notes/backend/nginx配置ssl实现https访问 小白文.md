@@ -6,7 +6,7 @@ tags:
 # nginx配置ssl实现https访问 小白文
 
 刚刚部署完服务器后的我满怀欣喜地访问自己的网站，看哪都哪满意。但是兴奋感一过发现，诶，为什么浏览器左上角会提示不安全？想了想，不行，我也要搞个https来，我也要上锁！
-![](./images/nginx/思考.jpg)
+![](./images/nginx/think.jpg)
 > HTTP协议以明文方式发送内容，不提供任何方式的数据加密。为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。
 
 ## 申请证书
@@ -104,7 +104,7 @@ server
 }
 ```
 唔，配置基本就这些，挺简单的吧。小白福利。
-![](./images/nginx/斜眼笑.jpg)
+![](./images/nginx/see_you_happy.jpg)
 然后我们配置文件写好后用nginx测试一下
 ```
 nginx -t

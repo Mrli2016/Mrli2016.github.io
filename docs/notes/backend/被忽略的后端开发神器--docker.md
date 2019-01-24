@@ -82,7 +82,7 @@ docker run -it --name test -p 8080:80 -v /docker/flask/app:/app -w /app tiangolo
 ## 自定义镜像
 在使用别人定制的镜像时总是不能尽善尽美的，如果在自己项目里面，不能每次都是拉取下来重新配置一下。像上面的镜像，我可不喜欢这么长的名字，想想每次要敲这么长的名字都头疼(tiangolo/uwsgi-nginx-flask:python3.7-alpine3.8)。
 
-![](./images/docker/头疼.jpg)
+![](./images/docker/trouble.jpg)
 ### 编写Dockerfile文件
 打开我们刚才的/docker/flask路径，在根目录下创建Dockerfile文件，内容如下。
 ```docker
@@ -133,7 +133,7 @@ Successfully tagged myflask:latest
 编译完后就通过`docker images`查看一下，就能看到myflask镜像了，里面能直接运行`python main.py`来启动flask，并且内置了vim和redis包。
 
 
-![](./images/docker/开心.jpg)
+![](./images/docker/happy.jpg)
 ## `Docker Compose`让多容器成为一个整体
 我们的每个容器都负责一个服务，这样容器多的时候一个个手动启动的话是不现实的。在这种情况我们可以通过`Docker Compose`来关联每个容器，组成一个完整的项目。
 >`Compose`项目由`Python`编写，实现上调用了 `Docker`服务提供的 API 来对容器进行管理。
@@ -197,7 +197,7 @@ docker-compose up
 ```
 就辣么简单!现在我们在浏览器上访问`http://localhost:8080/`就能看到结果了，并且每访问一次这页面都会自动增加访问次数.
 
-![](./images/docker/眨眼.gif)
+![](./images/docker/run_flask_redis.png)
 在这里，我们也能通过`docker ps`命令查看运行中的容器：
 ```bash
 docker ps
