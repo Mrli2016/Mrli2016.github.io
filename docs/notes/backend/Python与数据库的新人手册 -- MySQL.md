@@ -3,6 +3,8 @@ tags:
 - mysql
 - python
 ---
+# Python与数据库的新人手册 -- MySQL
+
 ![](./images/mysql/mysql_logo.jpg)
 Python支持的数据库有很多，`MySQL`作为主流数据库之一，我们不妨了解下它们之间的`小故事`
 Python操作MySQL的库有三个，`python-MySQL（MySQLdb）`，`PyMySQL`跟`SQLAlchemy`。

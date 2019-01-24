@@ -11,6 +11,7 @@
 
     <note-abstract
       :data="pages"
+      @currentTag="getPagesByTags"
       :currentPage="currentPage"></note-abstract>
     
     <pagation
@@ -61,6 +62,15 @@ export default {
     })
     if (this.currentTag != '') {
       this.getPagesByTags(this.currentTag)
+    } else {
+      // 未选择标签时展示所有文章
+      let pages = this.$site.pages
+      pages = pages.filter(item => {
+        let tags = item.frontmatter.tags
+        console.log(tags && tags.length)
+        return tags
+      })
+      this.pages = pages
     }
     this.currentTag = this.tag
   },
