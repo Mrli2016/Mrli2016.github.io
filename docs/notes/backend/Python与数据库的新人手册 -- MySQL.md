@@ -6,7 +6,7 @@ tags:
 # Python与数据库的新人手册 -- MySQL
 
 ![](./images/mysql/mysql_logo.jpg)
-Python支持的数据库有很多，`MySQL`作为主流数据库之一，我们不妨了解下它们之间的`小故事`
+Python支持的数据库有很多，`MySQL`作为主流数据库之一，我们不妨了解下它们之间的交互操作。
 Python操作MySQL的库有三个，`python-MySQL（MySQLdb）`，`PyMySQL`跟`SQLAlchemy`。
 * python2中一般使用`python-MySQL（MySQLdb）`，核心由C语言打造，性能最好，缺点是安装复杂，已停止更新，不支持python3。
 * `PyMySQL`为代替它而生，纯python打造，安装方便，支持python3。

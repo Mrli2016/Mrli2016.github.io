@@ -208,7 +208,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ```
 有了`Docker Compose`的`Docker`才是完整的`Docker`，有了这些以后开发简直不要太爽，每个容器只要维护自己的服务环境就ok了。
 
-![](https://user-gold-cdn.xitu.io/2018/12/26/167eabd14df0d85c?w=48&h=48&f=gif&s=2505)
+![](./images/docker/blink_eye.gif)
 
 
 ## Docker的日常操作
