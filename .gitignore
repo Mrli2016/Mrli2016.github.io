@@ -1,5 +1,8 @@
 *.yml
+*.sh
 Dockerfile
 .vuepress/html
 dist
 node_modules
+
+package-lock.json
