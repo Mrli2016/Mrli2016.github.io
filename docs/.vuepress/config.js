@@ -1,10 +1,18 @@
 module.exports = {
   head: [
-    ['link', { rel: 'shortcut icon', type: "image/png", href: `/favicon.png` }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    ['link', {
+      rel: 'shortcut icon',
+      type: "image/png",
+      href: `/favicon.png`
+    }],
+    ['meta', {
+      name: 'viewport',
+      content: 'width=device-width,initial-scale=1,user-scalable=no'
+    }]
   ],
   title: '子非鱼',
   description: '念念不忘 必有回响',
+  base: '/my-vuepress/',
   // theme: 'reco',
   themeConfig: {
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
@@ -31,9 +39,10 @@ module.exports = {
     sidebarDepth: 2,
     // 显示所有标题
     displayAllHeaders: true,
-    nav: [
-      { text: '标签墙', link: '/tags/' }
-    ],
+    nav: [{
+      text: '标签墙',
+      link: '/tags/'
+    }],
     logo: `/portrait.png`
   }
 }
