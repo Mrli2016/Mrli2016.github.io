@@ -12,7 +12,6 @@ module.exports = {
   ],
   title: '子非鱼',
   description: '念念不忘 必有回响',
-  base: '/my-vuepress/',
   // theme: 'reco',
   themeConfig: {
     // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL

@@ -1,5 +1,4 @@
 *.yml
-*.sh
 Dockerfile
 .vuepress/html
 dist
