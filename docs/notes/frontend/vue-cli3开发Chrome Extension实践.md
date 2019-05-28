@@ -1,38 +1,32 @@
----
-tags:
-- 前端
-- 插件
----
-# vue-cli3开发Chrome Extension实践
 
-之前找了不少如何开发谷歌插件的文章，结果发现都是很基础的内容，并没有写到如何快捷编译打包插件。我就在想为什么不能通过webpack来打包插件呢？如果通过webpack编译的话，就能使开发过程变得更舒服，使文件结构趋向模块化，并且打包的时候直接编译压缩代码。后来发现`vue-cli-plugin-chrome-ext`插件，通过这个插件能很容易将`vue-cli3`拿来开发谷歌插件，并能很舒服地引用各种UI框架跟npm插件。
+之前找了不少如何开发谷歌插件的文章，结果发现都是些很基础的内容，并没有写到如何快速编译打包插件。我就在想为什么不能通过webpack来打包插件呢？如果通过webpack编译的话，就能使开发过程变得更舒服，使文件结构趋向模块化，并且打包的时候直接编译压缩代码。后来发现了`vue-cli-plugin-chrome-ext`插件，通过这个插件能很方便地用`vue-cli3`来开发谷歌插件，并能直接引用各种UI框架跟npm插件。
 
-> tip：如果你没接触过插件开发的话建议先看看基础文档：
+> tip：如果你没接触过谷歌插件开发的话建议先看看基础文档：
 > * [Chrome 插件开发中文文档](https://crxdoc-zh.appspot.com/extensions/)
 > * [Chrome插件开发全攻略](https://github.com/sxei/chrome-plugin-demo.git)
 
 ## 搭建环境
 
-    1.创建一个`vue-cli3`项目： `vue create vue-extension`，对话流程选择默认就行。
-    2. 进入项目`cd vue-extension`
-    3.安装`vue-cli-plugin-chrome-ext`插件：`vue add chrome-ext`,根据安装对话选项设置好。
-    4.删除`vue-cli3`无用文件跟文件夹：`src/main.js`，`public`、`src/components`
+1. 创建一个`vue-cli3`项目： `vue create vue-extension`，对话流程选择默认就行。
+2. 进入项目`cd vue-extension`
+3. 安装`vue-cli-plugin-chrome-ext`插件：`vue add chrome-ext`,根据安装对话选项设置好。
+4. 删除`vue-cli3`无用文件跟文件夹：`src/main.js`，`public`、`src/components`
 
 ## 运行项目
 
-* `npm run build-watch` 运行开发环境，对修改文件进行实时编译。自动在根目录下生成`dist`文件夹，然后在浏览器上加载`dist`文件夹完成插件安装。(注意：修改`background`文件跟`manifest.json`文件并不能实时刷新代码，需要重新加载插件才行)
+* `npm run build-watch` 运行开发环境，对修改文件进行实时编译并自动在根目录下生成`dist`文件夹，然后在浏览器上加载`dist`文件夹完成插件安装。(注意：修改`background`文件跟`manifest.json`文件并不能实时刷新代码，需要重新加载插件才行)
 ![](./images/ChromeExtension/extension.png)
 
 * `npm run build` 运行生产环境编译打包，将所有文件进行整合打包。
 
 ## 引入element UI
-目前的插件加载到浏览器后是这种界面：
+目前的插件加载到浏览器后弹出页面是这种界面：
 ![](./images/ChromeExtension/popup.png)
 平时我们肯定要引入好看的UI框架的，在这里我们可以引入`element-ui`，首先安装：
 ```
 npm install element-ui
 ```
-考虑到插件打包后的文件大小，最后通过按需加载的方式来引入组件，按照官方的方法，要先安装`babel-plugin-component`插件:
+考虑到插件打包后的文件大小，最后通过按需加载的方式来引入组件，按照`element-ui`官方的按需加载方法，要先安装`babel-plugin-component`插件:
 ```
 npm install babel-plugin-component -D
 ```
@@ -53,7 +47,7 @@ module.exports = {
   ]
 }
 ```
-接下来修改popup相关文件，来引入所需组件，
+接下来修改`popup`相关文件引入所需组件，
 `src/popup/index.js`内容:
 ```js
 import Vue from "vue";
@@ -116,7 +110,7 @@ export default {
 当然，不仅仅是插件内部的页面，还可以将`element-ui`组件插入到`content`页面。
 
 ## `content.js`使用`element-ui`组件
-`content.js`主要作用于浏览网页，对打开的网页进行插入、修改`DOM`，对其进行操作交互。别觉得`element-ui`只能配合`vue`使用，其实就是一个前端框架，只要我们引入了就能使用，`webpack`自动会帮我们抽离出来编译打包。
+`content.js`主要作用于浏览网页，对打开的网页进行插入、修改`DOM`，对其进行操作交互。别觉得`element-ui`只能配合`vue`使用，其实就是一个前端框架，只要我们引入了就能使用，`webpack`会自动帮我们抽离出来编译打包。
 
 首先我们创建`src/content/index`文件，内容：
 ```js
@@ -238,7 +232,6 @@ module.export = {
 ```
 就辣么简单，然后运行`npm run build --report`看看效果：
 ![](./images/ChromeExtension/report.png)
-搞定收工！
 
 
 ## 结语
