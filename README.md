@@ -2,6 +2,8 @@
 通过`vuepress`将`markdown`文件编译成个人博客网站
 [在线访问](https://mrli2016.github.io/)
 
+[在线访问](https://mrli2016.github.io/)
+
 ## git clone
 ```
 git clone https://github.com/Mrli2016/my-vuepress.git
