@@ -210,9 +210,12 @@ module.exports = {
   },
   chainWebpack: config => {
     // 处理字体文件名，去除hash值
-    config.module
-      .rule('fonts')
-      .test(/\.(woff2?|eot|ttf|otf)(\?.*)?$/)
+    const fontsRule = config.module.rule('fonts')
+
+    // 清除已有的所有 loader。
+    // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
+    fontsRule.uses.clear()
+    fontsRule.testtest(/\.(woff2?|eot|ttf|otf)(\?.*)?$/i)
       .use('url')
       .loader('url-loader')
       .options({
@@ -302,6 +305,7 @@ window.chrome.management.getSelf(self => {
 // vue.config.js
 ...
 
+// 在这段下面添加
 const plugins = [
   CopyWebpackPlugin([
     manifest
@@ -359,14 +363,9 @@ npm install --save-dev zip-webpack-plugin
 // vue.config.js
 ...
 
-// 开发环境将热加载文件复制到静态文件夹
+// 开发环境将热加载文件复制到静态文件夹(在这段下面添加)
 if (process.env.NODE_ENV !== 'production') {
-  plugins.push(
-    CopyWebpackPlugin([{
-      from: path.resolve("src/utils/hot-reload.js"),
-      to: `${path.resolve("dist")}/assets`
-    }])
-  )
+    /*...*/
 }
 
 // 生产环境下打包dist为zip
