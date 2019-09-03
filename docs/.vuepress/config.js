@@ -2,13 +2,14 @@
  * @Author: 李永兴
  * @Email: mrli2016@126.com
  * @Date: 2019-03-08 11:25:17
- * @LastEditTime: 2019-09-03 09:49:51
+ * @LastEditTime: 2019-09-03 10:28:52
  * @Description: 
  */
 module.exports = {
   theme: 'reco',
   title: 'Mrli2016',
   description: '念念不忘 必有回响',
+  serviceWorker: true, // 离线缓存
   themeConfig: {
     type: 'blog',
     logo: '/portrait.png',
@@ -35,7 +36,8 @@ module.exports = {
     docsDir: 'docs',
     // 假如文档放在一个特定的分支下：
     docsBranch: 'master',
-    sidebarDepth: 2, // 侧边栏显示2级
+    sidebar: 'auto',
+    sidebarDepth: 3, // 侧边栏显示2级
     // 默认是 false, 设置为 true 来启用
     editLinks: true,
     // 默认为 "Edit this page"
