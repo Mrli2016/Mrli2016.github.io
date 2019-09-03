@@ -1,7 +1,11 @@
 ---
+categories: 
+- 后端
 tags:
 - mysql
 - python
+date:
+- 2019-01-23
 ---
 # Python与数据库的新人手册 -- MySQL
 

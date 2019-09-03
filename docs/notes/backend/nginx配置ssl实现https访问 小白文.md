@@ -1,7 +1,11 @@
 ---
+categories: 
+- 运维
 tags:
 - nginx
 - ssl
+date:
+- 2018-12-03
 ---
 # nginx配置ssl实现https访问 小白文
 

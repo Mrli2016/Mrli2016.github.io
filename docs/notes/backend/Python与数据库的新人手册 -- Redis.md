@@ -1,7 +1,11 @@
 ---
+categories: 
+- 后端
 tags:
 - redis
 - python
+date: 
+- 2019-09-01
 ---
 # Python与数据库的新人手册 -- Redis
 

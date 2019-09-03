@@ -1,7 +1,12 @@
 ---
+categories: 
+- 运维
+- 后端
 tags:
 - 后端
 - docker
+date:
+- 2018-12-26
 ---
 # 被忽略的后端开发神器--docker
 ![](./images/docker/docker.jpg)
