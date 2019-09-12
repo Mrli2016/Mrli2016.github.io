@@ -2,7 +2,7 @@
  * @Author: 李永兴
  * @Email: mrli2016@126.com
  * @Date: 2019-03-08 11:25:17
- * @LastEditTime: 2019-09-03 10:28:52
+ * @LastEditTime: 2019-09-12 09:59:09
  * @Description: 
  */
 module.exports = {
@@ -10,6 +10,7 @@ module.exports = {
   title: 'Mrli2016',
   description: '念念不忘 必有回响',
   serviceWorker: true, // 离线缓存
+
   themeConfig: {
     type: 'blog',
     logo: '/portrait.png',
