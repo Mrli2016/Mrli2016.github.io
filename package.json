@@ -13,6 +13,6 @@
     "vuepress": "^1.0.3"
   },
   "dependencies": {
-    "vuepress-theme-reco": "^1.0.8"
+    "vuepress-theme-reco": "^1.1.0"
   }
 }
