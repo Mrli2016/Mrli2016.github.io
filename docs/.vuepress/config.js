@@ -2,7 +2,7 @@
  * @Author: 李永兴
  * @Email: mrli2016@126.com
  * @Date: 2019-03-08 11:25:17
- * @LastEditTime: 2019-09-12 09:59:09
+ * @LastEditTime: 2020-02-26 18:45:10
  * @Description: 
  */
 module.exports = {
@@ -13,6 +13,7 @@ module.exports = {
 
   themeConfig: {
     type: 'blog',
+    authorAvatar: '/hero.jpg',
     logo: '/portrait.png',
     // 博客设置
     blogConfig: {
