@@ -1,30 +1,28 @@
----
-home: true
-heroText: Mrli2016
-tagline: 念念不忘 必有回响
-# heroImage: /hero.png
-# heroImageStyle: {
-#   maxWidth: '600px',
-#   width: '100%',
-#   display: block,
-#   margin: '9rem auto 2rem',
-#   background: '#fff',
-#   borderRadius: '1rem',
-# }
-bgImageStyle: {
-  height: '450px',
-  color: white,
-  textShadow: "0 0 3px black"
-}
-bgImage: 'bg.png'
-isShowTitleInHome: false
-actionText: Guide
-actionLink: /views/other/guide
-features:
-- title: Yesterday
-  details: 开发一款看着开心、写着顺手的 vuepress 博客主题
-- title: Today
-  details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
-- title: Tomorrow
-  details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
----
+# vuepress-blog
+通过`vuepress`将`markdown`文件编译成个人博客网站
+
+[在线访问](https://mrli2016.github.io/)
+
+## git clone
+```
+git clone https://github.com/Mrli2016/my-vuepress.git
+cd my-vuepress
+```
+
+## 环境安装
+```
+npm install
+```
+
+### 开发环境编译并热更新
+```
+npm run dev
+```
+
+### 生产环境打包
+```
+npm run build
+```
+
+#### 实现功能
+-   [x] 标签墙
