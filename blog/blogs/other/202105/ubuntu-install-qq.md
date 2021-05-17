@@ -32,6 +32,7 @@ sudo apt-get install \
 GitHub地址：
 微信：[https://github.com/bestwu/docker-wechat](https://github.com/bestwu/docker-wechat)
 QQ：[https://github.com/bestwu/docker-qq](https://github.com/bestwu/docker-qq)
+>实在遇到解决不了的问题就去开发者那边搞事情吧，我只是大自然的搬运工~~~
 
 ### 配置环境
 允许所有用户访问X11服务,终端运行命令:
@@ -123,6 +124,7 @@ docker run -d --name wechat --device /dev/snd --ipc="host"\
 ![启动微信界面](./images/wechat_start.png)
 
 #### 常用命令
+
 通过上面其中一种方式生成后，以后就可以通过容器名来操作docker相应的容器了：
 ```
 # 启动
@@ -134,4 +136,8 @@ docker stop qq(wechat)
 # 重启
 docker restart qq(wechat)
 ```
+
+## 结语
+
+不是工作必须要用到Ubuntu，谁又会这么折腾呢，划水还是得且划且珍惜。
 
