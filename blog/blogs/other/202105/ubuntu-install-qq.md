@@ -123,6 +123,17 @@ docker run -d --name wechat --device /dev/snd --ipc="host"\
 ```
 ![启动微信界面](./images/wechat_start.png)
 
+### 微信更新到3.2.1
+因为微信3.3.0以上已不支持xp系统环境了，所以这个deep-wine只能更新到3.2.1。
+```
+docker exec -it wechat bash
+mkdir /tmp/wechat
+cd /tmp/wechat
+wget https://dldir1.qq.com/weixin/Windows/WeChat_for_XP_SP3_To_Vista.exe
+su wechat
+env WINEPREFIX=/home/wechat/.deepinwine/Deepin-WeChat deepin-wine WeChat_for_XP_SP3_To_Vista.exe
+```
+
 #### 常用命令
 
 通过上面其中一种方式生成后，以后就可以通过容器名来操作docker相应的容器了：
