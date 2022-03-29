@@ -17,6 +17,11 @@ tags:
 sudo apt install ntp ntpdate -y
 ```
 
+## 修改时区
+```
+timedatectl set-timezone Asia/Shanghai
+```
+
 ## 配置ntp同步服务器
 打开ntp配置文件:
 ```
