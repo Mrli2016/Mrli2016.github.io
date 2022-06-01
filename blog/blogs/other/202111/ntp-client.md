@@ -48,7 +48,7 @@ server ntp.ubuntu.com
 ```
 
 ## 查看同步效果
-可以通过`ntpq -q`命令来查看：
+可以通过`ntpq -p`命令来查看：
 ```
      remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================

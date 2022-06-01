@@ -1,4 +1,5 @@
 node_modules/
+.history/
 public
 yarn.lock
 yarn.error
